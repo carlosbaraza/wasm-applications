@@ -1,2 +1,6 @@
 #include <iostream>
-int main() { std::cout<<"HELLO FROM DOCKER C++"<<std::endl; return 0; }
+int main()
+{
+    std::cout<<"HELLO MANU"<<std::endl;
+    return 0;
+}
