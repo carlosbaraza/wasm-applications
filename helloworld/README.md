@@ -7,6 +7,7 @@ This is a simple "Hello world" app in WASM.
 # Build the WASM module
 
 ```
+npm install
 npm run build
 ```
 
