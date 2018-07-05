@@ -1,7 +1,5 @@
 <html>
     <head>
-        <script src="/math.js"></script>
-
         <style>
             body {
                 display: flex;
@@ -33,6 +31,7 @@
 
         <h1 id="answer"></h1>
 
+        <script src="/math.js"></script>
         <script>
             const sqrt = Module.cwrap('float_sqrt', 'number', ['number'])
             document.querySelector('#question').addEventListener('submit', onSubmit)
