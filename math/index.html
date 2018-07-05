@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script src="/math.js"></script>
+
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            #number {
+                width: 200px;
+                height: 50px;
+                font-size: 20px;
+                font-family: 'Courier New', Courier, monospace;
+                text-align: center;
+                border: 1px solid #AAA;
+            }
+
+            #question, #answer {
+                display: block;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="question">
+            <input id="number" type="number" placeholder="Square Root">
+        </form>
+
+        <h1 id="answer"></h1>
+
+        <script>
+            const sqrt = Module.cwrap('float_sqrt', 'number', ['number'])
+            document.querySelector('#question').addEventListener('submit', onSubmit)
+
+            function onSubmit(event) { 
+                event.preventDefault();
+
+                const number = document.querySelector('#number').value;
+                let answer = sqrt(number);
+
+                if (answer === 42) {
+                    answer = "42\n the answer to life, the universe and everything"
+                }
+
+                document.querySelector('#answer').innerText = answer;
+            }
+        </script>
+    </body>
+</html>

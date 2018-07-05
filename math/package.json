@@ -1,0 +1,15 @@
+{
+  "name": "wasm-math",
+  "version": "1.0.0",
+  "description": "WASM Math module",
+  "scripts": {
+    "start": "http-server -o",
+    "build": "docker run --rm -v $(pwd):/src trzeci/emscripten emcc math.cpp -o math.js --closure 1 -s EXPORTED_FUNCTIONS='[\"_float_sqrt\"]' -s EXTRA_EXPORTED_RUNTIME_METHODS='[\"ccall\", \"cwrap\"]'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
